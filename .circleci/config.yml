@@ -1,0 +1,17 @@
+version: 2.1
+jobs:
+  Run-Automated-Test:
+    machine:
+      image: android:202102-01
+    # To optimize build times, we recommend "large" and above for Android-related jobs
+    resource_class: large
+    steps:
+      - checkout
+      - run:
+          name: Init
+          command: |
+            echo 'hii'
+workflows:
+  build:
+    jobs:
+      - Run-Automated-Test
